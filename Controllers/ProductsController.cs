@@ -4,10 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using myWebApp.Models;
-using myWebApp.Services;
+using MyFirstBlazorWebApp.Models;
+using MyFirstBlazorWebApp.Services;
 
-namespace myWebApp.Controllers
+namespace MyFirstBlazorWebApp.Controllers
 {
     // Removed the 'api/' from the Route (https://youtu.be/VI40Y3kFcNc?t=257)
     [Route("[controller]")]

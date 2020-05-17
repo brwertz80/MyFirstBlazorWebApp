@@ -9,10 +9,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using myWebApp.Models;
-using myWebApp.Services;
+using MyFirstBlazorWebApp.Models;
+using MyFirstBlazorWebApp.Services;
 
-namespace myWebApp
+namespace MyFirstBlazorWebApp
 {
     public class Startup
     {

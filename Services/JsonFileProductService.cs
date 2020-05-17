@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
-using myWebApp.Models;
+using MyFirstBlazorWebApp.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace myWebApp.Services
+namespace MyFirstBlazorWebApp.Services
 {
     public class JsonFileProductService
     {

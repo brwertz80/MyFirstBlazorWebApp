@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using myWebApp.Models;
-using myWebApp.Services;
+using MyFirstBlazorWebApp.Models;
+using MyFirstBlazorWebApp.Services;
 
-namespace myWebApp.Pages
+namespace MyFirstBlazorWebApp.Pages
 {
     public class IndexModel : PageModel
     {
