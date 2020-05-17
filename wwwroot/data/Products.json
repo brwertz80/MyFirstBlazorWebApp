@@ -66,7 +66,12 @@
     "Url": "https://twitter.com/sailorhg/status/1090113666911891456",
     "Title": "Light-up Corsage",
     "Description": null,
-    "Ratings": null
+    "Ratings": [
+      3,
+      1,
+      5,
+      5
+    ]
   },
   {
     "Id": "sailorhg-kit",
@@ -75,7 +80,15 @@
     "Url": "https://twitter.com/sailorhg/status/1090122822007963648",
     "Title": "Pastel hardware kit",
     "Description": null,
-    "Ratings": null
+    "Ratings": [
+      4,
+      1,
+      5,
+      1,
+      4,
+      1,
+      5
+    ]
   },
   {
     "Id": "sailorhg-led",

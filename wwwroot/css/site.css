@@ -30,11 +30,26 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .modal .card-img {
-    height: 500px;
+    height: 420px;
     vertical-align: bottom;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.modal .modal-footer-left {
+    float: left;
+    width: 25%;
+}
+
+.modal .modal-footer-center {
+    float: left;
+    width: 50%;
+}
+
+.modal .modal-footer-right {
+    float: right;
+    width: 255%;
 }
 
 .card-columns .card:hover {
@@ -66,11 +81,11 @@ a {
     border-color: #252152;
 }
 
-    .btn-primary:hover {
-        color: #fff;
-        background-color: #e9a8a6;
-        border-color: #e9a8a6;
-    }
+.btn-primary:hover {
+    color: #fff;
+    background-color: #e9a8a6;
+    border-color: #e9a8a6;
+}
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
