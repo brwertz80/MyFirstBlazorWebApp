@@ -1,4 +1,4 @@
-# myWebApp
+# MyFirstBlazorWebApp
 This is taken from the ASP.NET Core 101 training on the dotNet Youtube 
 site (https://www.youtube.com/playlist?list=PLdo4fOcmZ0oW8nviYduHq7bmKode-p8Wy).
 

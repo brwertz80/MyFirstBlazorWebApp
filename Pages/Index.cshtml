@@ -1,5 +1,5 @@
 ﻿@page
-@using myWebApp.Components
+@using MyFirstBlazorWebApp.Components
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -28,7 +28,5 @@
 @*</div>*@
 
 @(await Html.RenderComponentAsync<ProductList>(RenderMode.ServerPrerendered))
-
-
 
 <script src="_framework/blazor.server.js"></script>

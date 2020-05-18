@@ -37,19 +37,27 @@ for details on configuring this project to bundle and minify static web assets. 
     background-size: cover; /* Resize the background image to cover the entire container */
 }
 
-.modal .modal-footer-left {
-    float: left;
-    width: 25%;
+.modal .modal-footer {
+    border-top: hidden;
+    padding-top: unset;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
-.modal .modal-footer-center {
-    float: left;
-    width: 50%;
+.modal .modal-footer-left {
+    /*align-items: flex-start;*/
+    /*width: 25%;*/
 }
 
 .modal .modal-footer-right {
-    float: right;
-    width: 255%;
+    float: none;
+    align-items: end;
+    justify-content: end;
+    /*width: 75%;*/
+}
+
+.modal .modal-stars {
+    justify-content: flex-end;
 }
 
 .card-columns .card:hover {

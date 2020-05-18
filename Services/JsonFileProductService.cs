@@ -64,5 +64,12 @@ namespace MyFirstBlazorWebApp.Services
                 );
             }
         }
+
+        public string GetProductUrlById(string productId)
+        {
+            var products = GetProducts();
+
+            return products.First(x => x.Id == productId).Url;
+        }
     }
 }
