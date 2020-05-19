@@ -20,7 +20,9 @@
       4,
       5,
       5,
-      1
+      1,
+      4,
+      5
     ]
   },
   {
@@ -106,7 +108,9 @@
     "Url": "https://www.instagram.com/p/BNvESj-j8PI/",
     "Title": "Black Sweatshirt",
     "Description": null,
-    "Ratings": null
+    "Ratings": [
+      3
+    ]
   },
   {
     "Id": "selinazawacki-soi-pins",
@@ -153,7 +157,9 @@
     "Url": "https://www.instagram.com/p/BFktVYPinKQ/",
     "Title": "Holographic Dark Moon Necklace",
     "Description": null,
-    "Ratings": null
+    "Ratings": [
+      3
+    ]
   },
   {
     "Id": "selinazawacki-shirt",

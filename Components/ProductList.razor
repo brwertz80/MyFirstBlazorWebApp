@@ -1,33 +1,28 @@
 ﻿@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.JSInterop
 @using MyFirstBlazorWebApp.Models
 @using MyFirstBlazorWebApp.Services
+@inject IJSRuntime jsRuntime
 @inject JsonFileProductService ProductService
 @* Added in ASP.NET Core 101 [10 of 13] (https://youtu.be/R23v4lgHYQI?t=199) *@
 <div class="card-columns">
     @foreach (var product in ProductService.GetProducts())
     {
-        <div class="card">
+        <div class="card" @onclick="(e => SelectProduct(product.Id))"
+             data-toggle="modal" data-target="#productModal">
             <div class="card-img" style="background-image: url('@product.Image');"></div>
             <div class="card-body">
-                <h5 class="card-title">@product.Title</h5>
+                <h5 class="card-title">@product.Title by @product.Maker</h5>
             </div>
-        </div>
-        <div class="card-footer">
-            <small class="text-muted">
-                <button @onclick="(e => SelectProduct(product.Id))"
-                        data-toggle="modal" data-target="#productModal" class="btn btn-primary">
-                    More Info
-                </button>
-            </small>
         </div>
     }
 </div>
 
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+@*<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/font-awesome.min.css">*@
 
 @*Added in ASP.NET Core 101 [11 of 13] (https://youtu.be/wA-3FA2kbpA?t=226)*@
-<div class="modal fade" id="productModal" tabindex="-1" role="dialog" 
+<div class="modal fade" id="productModal" tabindex="-1" role="dialog"
      aria-labelledby="productTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         @if (selectedProduct != null)
@@ -43,23 +38,26 @@
                     <div class="card">
                         <div class="card-img" style="background-image: url('@selectedProduct.Image');">
                         </div>
-                        <div class="card-body">
-                            <p class="card-text">@selectedProduct.Description</p>
-                        </div>
+                        @if (!string.IsNullOrEmpty(selectedProduct.Description))
+                        {
+                            <div class="card-body">
+                                <p class="card-text">@selectedProduct.Description</p>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="modal-footer">
                     <span class="modal-footer-left">
-                        <button class="btn btn-primary" onclick='window.location=@selectedProduct.Url'>Go To Site</button>
+                        <button class="btn btn-primary" @onclick='OpenUrlInNewTab'>Visit Site</button>
                     </span>
                     <span class="modal-footer-right">
                         @if (voteCount == 0)
                         {
-                            <span>Be the first to vote!</span>
+                            <span>Be the first to vote!  </span>
                         }
                         else
                         {
-                            <span>@voteCount @voteLabel</span>
+                            <span>@voteCount  @voteLabel  </span>
                         }
                         <span class="modal-stars">
                             @for (int i = 1; i < 6; i++)
@@ -67,13 +65,13 @@
                                 var currentStar = i;
                                 if (i <= currentRating)
                                 {
-                                    <span class="fa fa-star checked"
-                                          @onclick="(e => SubmitRating(currentStar))"></span>
+                                    <i class="fas fa-star checked"
+                                          @onclick="(e => SubmitRating(currentStar))"></i>
                                 }
                                 else
                                 {
-                                    <span class="fa fa-star"
-                                          @onclick="(e => SubmitRating(currentStar))"></span>
+                                    <i class="fas fa-star"
+                                          @onclick="(e => SubmitRating(currentStar))"></i>
                                 }
                             }
                             @if (voteCount > 0)
@@ -122,7 +120,6 @@
             voteLabel = voteCount > 1 ? "Votes" : "Vote";
             currentRating = selectedProduct.Ratings.Sum() / voteCount;
             voteAverage = Math.Round(currentRating, 1).ToString();
-            //voteAverage = string.Format("{0:0.#}", decAvg);
         }
 
         System.Console.WriteLine($"Current rating: {selectedProduct.Id}: {currentRating}");
@@ -133,5 +130,10 @@
         System.Console.WriteLine($"Rating received for {selectedProduct.Id}: {rating}");
         ProductService.AddRating(selectProductId, rating);
         SelectProduct(selectProductId);
+    }
+
+    async Task OpenUrlInNewTab()
+    {
+        await jsRuntime.InvokeAsync<object>("open", selectedProduct.Url, "_blank");
     }
 }

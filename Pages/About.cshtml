@@ -1,0 +1,38 @@
+﻿@page
+@model MyFirstBlazorWebApp.Pages.AboutModel
+@{
+    ViewData["Title"] = "About";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    This whole site was created based on dotNET's <a href="https://www.youtube.com/playlist?list=PLdo4fOcmZ0oW8nviYduHq7bmKode-p8Wy" target="_blank">
+        ASP.NET Core 101 playlist</a>
+</p>
+<p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLdo4fOcmZ0oW8nviYduHq7bmKode-p8Wy"
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+<p>
+    I've made the following changes to the site built in the playlist above:
+    <ul>
+        <li>Changed the Header colors to match Virginia Tech colors.</li>
+        <li>Removed the "More Info" button from the main page and enabled the onlick functionality at the <span class="code">div class="card"</span> level. </li>
+        <li>Added the <span class="code">selectedProduct.Description</span> to the Modal dialog if it exists.</li>
+        <li>
+            Added a "Visit Site" button on the modal dialog that takes the user to the Url listed in the Products.json file
+            using
+            <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.jsinterop?view=aspnetcore-3.1">Microsoft.JSInterop</a>'s
+            <span class="code">IJSRuntime.InvokeAsync</span>.
+        </li>
+        <li>Added the average rating count beside the stars similar to what is on Amazon.</li>
+        <li>Cleaned up the Modal dialog UI.</li>
+        <li>
+            Updated the stars in the Modal dialog to use
+            <a href="https://fontawesome.com/icons/star?style=solid" target="_blank">Font Awesome's version 5</a>
+            and placed the appropriate script tag in the _Layout.cshtml page.
+        </li>
+        <li>Added this About page and the corresponding links.</li>
+    </ul>
+</p>
