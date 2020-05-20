@@ -47,10 +47,10 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <span class="modal-footer-left">
+                    <span>
                         <button class="btn btn-primary" @onclick='OpenUrlInNewTab'>Visit Site</button>
                     </span>
-                    <span class="modal-footer-right">
+                    <span>
                         @if (voteCount == 0)
                         {
                             <span>Be the first to vote!  </span>
@@ -65,13 +65,11 @@
                                 var currentStar = i;
                                 if (i <= currentRating)
                                 {
-                                    <i class="fas fa-star checked"
-                                          @onclick="(e => SubmitRating(currentStar))"></i>
+                                    <i class="fas fa-star checked" @onclick="(e => SubmitRating(currentStar))" />
                                 }
                                 else
                                 {
-                                    <i class="fas fa-star"
-                                          @onclick="(e => SubmitRating(currentStar))"></i>
+                                    <i class="fas fa-star" @onclick="(e => SubmitRating(currentStar))" />
                                 }
                             }
                             @if (voteCount > 0)
